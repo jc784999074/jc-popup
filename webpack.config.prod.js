@@ -7,7 +7,7 @@ var path = require('path'),
 module.exports = {
     context: __dirname,
     entry: {
-        vendor: ['react', 'react-dom', 'react-router','react-motion'],
+        vendor: ['react', 'react-dom'],
         index: ['./src/login']
     },
     resolve: {

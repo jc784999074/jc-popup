@@ -1,15 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const vendors = [
-    'react',
-    'react-dom',
-    'react-router'
-];
-
 module.exports = {
     entry: {
-        vendor: ['react', 'react-dom', 'react-router']
+        vendor: ['react', 'react-dom']
     },
     output: {
         path: __dirname + "/www-dev/",

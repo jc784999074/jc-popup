@@ -10,7 +10,7 @@ module.exports = {
     debug: true,
     devtool: 'source-map',
     entry: {
-        vendor: ['react','react-dom','react-router','react-motion'],
+        vendor: ['react','react-dom'],
         index: ['./src/index']
     },
     resolve: {
