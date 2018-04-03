@@ -1,0 +1,101 @@
+//弹框公共样式引用
+.popupContent{
+    background: #fafbfe;
+    position: absolute;  
+    opacity: 0;
+}
+
+//弹框样式
+.jc-popup{
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: scale(0);
+    .popup-content{
+        padding: 0;
+    }
+    &>div:not(.shadow){
+        border-radius: 4px;
+        transition: opacity .4s ease-in-out, transform .4s ease-out,top .4s ease-out,bottom .4s ease-out,left .4s ease-out,right .4s ease-out;    
+    }
+    &>div.fade{
+            opacity: 0;
+            .popupContent;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    &>div.top{
+        .popupContent;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,-100%);
+    }
+    &>div.bottom{
+        .popupContent;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+    &>div.left{
+        .popupContent;
+        top: 50%;
+        left: 0;
+        transform: translate(-100%,-50%);
+    }
+    &>div.right{
+        .popupContent;
+        top: 50%;
+        left: 100%;
+        transform: translate(0,-50%);
+    }
+    
+    .shadow{
+        background: rgba(55, 55, 55, 0);
+        width: 100%;
+        height: 100%;
+        transition: background 0.3s ease-out;
+    }
+    &.active{
+        transform: scale(1);
+        .popup-content{
+            padding: 18px;
+        }
+        &>div:not(.shadow){
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 1;
+        }
+        .shadow{
+            background: rgba(55, 55, 55, .85);
+        }
+    }
+    .popup-title{
+        margin: -18px;
+        margin-bottom: 18px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 14px;
+        background: #4a90e2;
+        color: #fff;
+        &+span{
+            line-height: 50px;
+        }
+    }  
+    .btn-close{
+        position: absolute;
+        right: -30px;
+        top: -30px;
+        font-size: 24px;
+        color: #fff;
+        font-family: cursive;
+        cursor: pointer;
+    }    
+}
